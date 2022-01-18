@@ -5,7 +5,7 @@ export default function Discord(options) {
     name: "Discord",
     type: "oauth",
     authorization:
-      `https://discord.com/api/oauth2/authorize?scope=${option.scopes.replaceAll(String(options.scopes).replace(/\s/g, '+'))}`,
+      `https://discord.com/api/oauth2/authorize?scope=${option.scopes.replaceAll(String(options.scopes || 'identify email').replace(/\s/g, '+'))}`,
     token: "https://discord.com/api/oauth2/token",
     userinfo: "https://discord.com/api/users/@me",
     profile(profile) {
